@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #0b061f;
+    overflow: hidden;
+}
+
+.section #main-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../index/foto/germany.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    transition: width 1s ease-in-out;
+}
+
+.toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    cursor: pointer;
+    transition: 1s ease-in-out;
+}
+
+.toggle .icon {
+    font-size: 4em;
+    color: #fff;
+}
+
+.section.active .toggle {
+    top: 20px;
+    right: 430px;
+    transform: rotate(180deg);
+}
+
+.section.active .thumb-box.active-img1-front~#main-image,
+.section.active .thumb-box.active-img2-front~#main-image,
+.section.active .thumb-box.active-img3-front~#main-image,
+.section.active .thumb-box.active-img4-front~#main-image {
+    width: 70%;
+}
+
+.section .thumb-box.active-img1-front~#main-image,
+.section .thumb-box.active-img2-front~#main-image,
+.section .thumb-box.active-img3-front~#main-image,
+.section .thumb-box.active-img4-front~#main-image {
+    transition: width 1s ease-in-out, background 0s;
+    transition-delay: 0s, 1.3s;
+    width: 100%;
+}
+
+.section .thumb-box.active-img1-front~#main-image {
+    background: url(../index/foto/egypt.jfif);
+}
+
+.section .thumb-box.active-img2-front~#main-image {
+    background: url(../index/foto/germany.jpg);
+}
+
+.section .thumb-box.active-img3-front~#main-image {
+    background: url(../index/foto/Havasu-falls.jpg);
+}
+
+.section .thumb-box.active-img4-front~#main-image {
+    background: url(../index/foto/moai.jpg);
+}
+
+.section .thumb-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    right: 100%;
+}
+
+.section .navigation {
+    width: 100%;
+}
+
+.section .navigation li {
+    list-style: none;
+}
+
+.section .navigation li img {
+    position: absolute;
+    top: 0;
+    right: -250px;
+    width: 18%;
+    border-radius: 4px;
+    z-index: 1;
+    transition: right 1s ease-in-out;
+}
+
+.section.active .navigation li img {
+    right: 80px;
+}
+
+.section .navigation li:nth-child(1) img {
+    margin-top: 55px;
+}
+
+.section .navigation li:nth-child(2) img {
+    margin-top: 225px;
+}
+
+.section .navigation li:nth-child(3) img {
+    margin-top: 395px;
+}
+
+.section .navigation li:nth-child(4) img {
+    margin-top: 565px;
+}
+
+.section .navigation li.active img {
+    pointer-events: none;
+    user-select: none;
+}
+
+.section .thumb-box.active-img1 .navigation li:nth-child(1).active img,
+.section .thumb-box.active-img2 .navigation li:nth-child(2).active img,
+.section .thumb-box.active-img3 .navigation li:nth-child(3).active img,
+.section .thumb-box.active-img4 .navigation li:nth-child(4).active img {
+    transition: right 1s ease-in-out, margin-top 1s ease-in-out, width 1s ease-in-out, z-index 0s;
+    right: 0;
+    margin-top: 0;
+    width: 100%;
+    z-index: 3;
+}
